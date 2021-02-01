@@ -50,6 +50,26 @@ function expect(target) {
 //
 // Only add code to *THIS* section!
 
+function Dog(mood, coat, hunger, owner) {
+  this.color = coat;
+  this.hungry = hunger;
+  this.status = mood;
+  this.owner = owner;
+}
+
+function Human(cool){
+  this.cool = cool;
+  this.pet = function(name){
+    this.dogName = name;  
+    this.dogName.status = "happy";
+  
+}
+  this.feed = function(name){
+
+}}
+
+
+
 // ????????
 // ????????
 // ????????
@@ -64,6 +84,7 @@ function expect(target) {
 var sadie = new Dog({
   color: 'black',
   hungry: false,
+  status: 'normal',
 })
 
 var moonshine = new Dog({
