@@ -50,29 +50,30 @@ function expect(target) {
 //
 // Only add code to *THIS* section!
 
-function Dog(mood, coat, hunger, owner) {
-  this.color = coat;
-  this.hungry = hunger;
-  this.status = mood;
-  this.owner = owner;
+function Dog(obj) {
+  this.status = 'normal'
+    if (obj) {
+      this.color = obj.color
+    if (obj.hungry !== undefined) {
+      this.hungry = obj.hungry
+    } else {
+      this.hungry = true
+    }
+  }
+} q
+
+function Human(obj){
+
+
 }
 
-function Human(cool){
-  this.cool = cool;
-  this.pet = function(name){
-    this.dogName = name;  
-    this.dogName.status = "happy";
-  
+
+Human.prototype.pet = function (obj) {
+  obj.status = 'happy'
 }
-  this.feed = function(name){
-
-}}
-
-
-
-// ????????
-// ????????
-// ????????
+Human.prototype.feed = function (obj) {
+  obj.hungry = false
+}
 
 //        __
 //   ____/ /___  ____ ______
@@ -84,7 +85,7 @@ function Human(cool){
 var sadie = new Dog({
   color: 'black',
   hungry: false,
-  status: 'normal',
+
 })
 
 var moonshine = new Dog({
@@ -120,8 +121,8 @@ it('should make Sadie happy when Mason pets her', function () {
   expect(sadie.status).toBe('happy')
 })
 
-it('should make Sadie black', function () {
-  expect(sadie.color).toBe('black')
+it('should make Moonshine blue-red', function () {
+  expect(moonshine.color).toBe('blue-red')
 })
 
 it('should be make Moonshine hungry and Sadie not hungry', function () {
